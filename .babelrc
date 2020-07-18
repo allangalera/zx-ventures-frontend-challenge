@@ -1,0 +1,17 @@
+{
+  "presets": ["next/babel", "@babel/preset-typescript", "@emotion/babel-preset-css-prop"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@components": "./components",
+          "@pages": "./pages",
+          "@layouts": "./layouts",
+          "@test": "./test"
+        }
+      }
+    ]
+  ]
+}

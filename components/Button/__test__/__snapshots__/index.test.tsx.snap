@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="css-1gk7bz7-Button"
+  >
+    <span
+      class="css-1dis8g1-Button"
+    >
+      Button Label
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Home page matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="css-1gk7bz7-Button"
+  >
+    <span
+      class="css-1dis8g1-Button"
+    >
+      Button Label
+    </span>
+  </button>
+</DocumentFragment>
+`;
