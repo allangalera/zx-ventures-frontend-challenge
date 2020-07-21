@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import useSWR from 'swr';
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
-const fetcher = url => fetch(url).then(res => res.json());
+const fetcher = (url: any) => fetch(url).then(res => res.json());
 
 import LDefault from '@layouts/LDefault';
 import MetaSeo from '@components/MetaSeo';
@@ -25,7 +25,7 @@ const Home: FunctionComponent<any> = (): JSX.Element => {
       <MetaSeo {...seo} />
       <Container>
         <Spacer />
-        {data && <ProductGallery products={data.items.slice(0, 10)} />}
+        {data && <ProductGallery products={data.items} />}
         <Spacer />
       </Container>
     </LDefault>

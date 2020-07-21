@@ -8,6 +8,9 @@ export const Footer = (theme: any) => ({
   width: '100%',
   background: theme.colors.footerBackground,
   height: theme.footer.height.mobile,
+  borderTopWidth: theme.spacing.pxToRem(1),
+  borderTopStyle: 'solid',
+  borderTopColor: theme.colors.gray[300],
   [`@media (min-width: ${theme.screens.lg})`]: {
     height: theme.footer.height.desktop,
   },
