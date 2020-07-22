@@ -4,9 +4,9 @@ import theme from '../../theme';
 
 type Props = {
   name: string;
-  vendors: Array;
+  vendors: Array<any>;
   image: string;
-  packs: Array;
+  packs: Array<any>;
 };
 
 const ProductCard: React.FunctionComponent<Props> = (props): JSX.Element => {

@@ -164,6 +164,12 @@ const transition = {
   default: `all ${TRANSITION_DURATION}ms ease-in-out`,
 };
 
+const border = {
+  style: 'solid',
+  width: spacing.pxToRem(1),
+  radius: spacing.unityToRem(4),
+};
+
 const defaults = {
   c: BASE_FONT_SIZE,
   header: {
@@ -209,6 +215,13 @@ export default {
       footerBackground: defaultColors.white,
     },
     boxShadow,
+    border: {
+      ...border,
+      color: {
+        default: defaultColors.gray[100],
+        hover: defaultColors.gray[300],
+      },
+    },
   },
   dark: {
     ...defaults,
@@ -223,5 +236,12 @@ export default {
       footerBackground: defaultColors.black,
     },
     boxShadow,
+    border: {
+      ...border,
+      color: {
+        default: defaultColors.gray[100],
+        hover: defaultColors.gray[300],
+      },
+    },
   },
 };

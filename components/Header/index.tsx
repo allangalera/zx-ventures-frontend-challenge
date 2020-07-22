@@ -1,14 +1,19 @@
 import React from 'react';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import * as styles from './styles';
+
+import SearchBox from '@components/SearchBox';
 
 const Header: React.FunctionComponent = (): JSX.Element => {
   return (
     <header css={styles.Header}>
-      <div>menu</div>
-      <div>Header</div>
-      <div>search box</div>
-      <div>cart icon</div>
-      <div>user icon</div>
+      <div>AG ZX Challenge</div>
+      <div>
+        <SearchBox />
+      </div>
+      <div>
+        <AiOutlineShoppingCart />
+      </div>
     </header>
   );
 };

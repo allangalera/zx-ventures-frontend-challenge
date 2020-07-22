@@ -4,7 +4,7 @@ import * as styles from './styles';
 import ProductCard from '@components/ProductCard';
 
 type Props = {
-  products: Array;
+  products: Array<any>;
 };
 
 const ProductGallery: React.FunctionComponent<Props> = ({ products }): JSX.Element => {
