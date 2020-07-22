@@ -9,7 +9,9 @@
           "@components": "./components",
           "@pages": "./pages",
           "@layouts": "./layouts",
-          "@test": "./test"
+          "@test": "./test",
+          "@redux": "./redux",
+          "@styles": "./styles"
         }
       }
     ]

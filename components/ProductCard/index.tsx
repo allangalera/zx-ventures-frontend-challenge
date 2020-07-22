@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import * as styles from './styles';
-import theme from '../../theme';
+
+import { actions } from '@redux/cart';
 
 type Props = {
   name: string;
@@ -10,6 +12,7 @@ type Props = {
 };
 
 const ProductCard: React.FunctionComponent<Props> = (props): JSX.Element => {
+  const dispatch = useDispatch();
   const [selectedPack, setSelectedPack] = useState(props.packs[0]);
 
   const calculateDiscount = () => {
@@ -18,6 +21,7 @@ const ProductCard: React.FunctionComponent<Props> = (props): JSX.Element => {
 
   const handleAddToCart = () => {
     console.log(selectedPack);
+    dispatch(actions.addItem(selectedPack));
   };
 
   return (

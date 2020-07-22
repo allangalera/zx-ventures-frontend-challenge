@@ -18,7 +18,9 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
-      "@test/*": ["test/*"]
+      "@test/*": ["test/*"],
+      "@redux/*": ["redux/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "exclude": ["node_modules"],

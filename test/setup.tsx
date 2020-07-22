@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'emotion-theming';
 
-import theme from '../theme';
+import theme from '@styles/theme';
 
 const Providers = ({ children }: any) => {
   return <ThemeProvider theme={theme.light}>{children}</ThemeProvider>;

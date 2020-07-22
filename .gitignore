@@ -8,6 +8,9 @@
 # production
 /build
 
+# test
+/coverage
+
 
 # debug
 npm-debug.log*
