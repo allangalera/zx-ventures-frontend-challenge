@@ -1,4 +1,6 @@
-export const Button = (theme: any) => ({
+import { Interpolation } from '@emotion/core';
+
+export const Button = (theme: any): Interpolation => ({
   color: 'white',
   background: 'black',
   border: 'none',
@@ -6,4 +8,4 @@ export const Button = (theme: any) => ({
   padding: '1rem 2rem',
 });
 
-export const ButtonSpan = (theme: any) => ({});
+export const ButtonSpan = (theme: any): Interpolation => ({});

@@ -1,4 +1,6 @@
-export const Header = (theme: any) => ({
+import { Interpolation } from '@emotion/core';
+
+export const Header = (theme: any): Interpolation => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',

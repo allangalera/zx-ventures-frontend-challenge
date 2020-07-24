@@ -11,6 +11,7 @@
           "@layouts": "./layouts",
           "@test": "./test",
           "@redux": "./redux",
+          "@store": "./store",
           "@styles": "./styles"
         }
       }

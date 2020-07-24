@@ -1,4 +1,6 @@
-export const Footer = (theme: any) => ({
+import { Interpolation } from '@emotion/core';
+
+export const Footer = (theme: any): Interpolation => ({
   position: 'fixed',
   left: 0,
   bottom: 0,

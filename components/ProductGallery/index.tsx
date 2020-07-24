@@ -11,7 +11,7 @@ const ProductGallery: React.FunctionComponent<Props> = ({ products }): JSX.Eleme
   return (
     <div css={styles.ProductGallery}>
       {products.map(item => (
-        <ProductCard key={item.uuid} {...item} />
+        <ProductCard key={item.uuid} product={item} />
       ))}
     </div>
   );

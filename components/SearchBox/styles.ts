@@ -1,4 +1,6 @@
-export const SearchBox = (theme: any) => ({
+import { Interpolation } from '@emotion/core';
+
+export const SearchBox = (theme: any): Interpolation => ({
   border: 'none',
   padding: `${theme.spacing.unityToRem(8)} ${theme.spacing.unityToRem(16)}`,
   borderWidth: theme.border.width,

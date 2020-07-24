@@ -1,4 +1,6 @@
-export const ProductCard = (theme: any) => ({
+import { Interpolation } from '@emotion/core';
+
+export const ProductCard = (theme: any): Interpolation => ({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
@@ -13,19 +15,19 @@ export const ProductCard = (theme: any) => ({
   },
 });
 
-export const ProductCardImageContainer = (theme: any) => ({
+export const ProductCardImageContainer = (theme: any): Interpolation => ({
   display: 'flex',
   justifyContent: 'center',
   height: theme.spacing.unityToRem(90),
 });
 
-export const ProductCardImage = (theme: any) => ({
+export const ProductCardImage = (theme: any): Interpolation => ({
   maxWidth: '100%',
   height: 'auto',
   objectFit: 'contain',
 });
 
-export const ProductCardDiscountBadge = (theme: any) => ({
+export const ProductCardDiscountBadge = (theme: any): Interpolation => ({
   position: 'absolute',
   borderRadius: '50%',
   display: 'flex',

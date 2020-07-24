@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'emotion-theming';
 import theme from '@styles/theme';
 import { Provider } from 'react-redux';
-import store from '@redux/setup';
+import store from '@store/setup';
 
 const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (

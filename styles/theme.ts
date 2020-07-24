@@ -39,6 +39,9 @@ const fontWeight = {
 const font = {
   size: fontSize,
   weight: fontWeight,
+  family: {
+    sans: '"Roboto", sans',
+  },
 };
 
 // extracted from tailwind default config :)
