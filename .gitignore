@@ -23,6 +23,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# serverless
+.serverless
+.serverless_nextjs
+
 # misc
 .DS_Store
 *.pem
