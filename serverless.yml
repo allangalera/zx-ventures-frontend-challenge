@@ -1,0 +1,4 @@
+myNextApplication:
+  component: '@sls-next/serverless-component@1.15.0-alpha.5'
+  inputs:
+    domain: ['zx-ventures-challenge', 'allangalera.com']
