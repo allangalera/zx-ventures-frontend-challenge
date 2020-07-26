@@ -10,6 +10,7 @@ export const ProductCard = (theme: any): Interpolation => ({
   borderColor: theme.border.color.default,
   borderRadius: theme.border.radius,
   transition: theme.transition.default,
+  color: theme.colors.defaultText,
   ['&:hover']: {
     borderColor: theme.border.color.hover,
   },
@@ -38,12 +39,13 @@ export const ProductCardDiscountBadge = (theme: any): Interpolation => ({
   justifyContent: 'center',
   alignItems: 'center',
   alignSelf: 'flex-end',
-  background: theme.colors.black,
-  color: theme.colors.white,
+  background: theme.colors.contrastBackground,
+  color: theme.colors.contrastText,
   fontSize: theme.font.size.sm,
   width: theme.spacing.unityToRem(28),
   height: theme.spacing.unityToRem(28),
   pointerEvents: 'none',
+  marginTop: 0,
 });
 
 export const PackSelectorContainer = (theme: any): Interpolation => ({
@@ -70,4 +72,8 @@ export const PackInfo = (theme: any): Interpolation => ({
 
 export const ProductInfoContainer = (theme: any): Interpolation => ({
   flex: 1,
+});
+
+export const ButtonIcon = (theme: any): Interpolation => ({
+  fontSize: theme.font.size['2xl'],
 });

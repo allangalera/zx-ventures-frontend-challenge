@@ -57,9 +57,9 @@ const CartMenu: React.FunctionComponent<Props> = ({ visible, onClose }): JSX.Ele
           item && (
             <animated.div key={key} style={props} css={styles.CartMenu}>
               <div css={styles.TitleContainer}>
-                <h1>Carrinho</h1>
-                <Button handleClick={onClose}>
-                  <AiOutlineClose />
+                <h1 css={styles.Title}>Carrinho</h1>
+                <Button small handleClick={onClose}>
+                  <AiOutlineClose css={styles.IconSize} />
                 </Button>
               </div>
               <div css={styles.CartMenuContainer}>
@@ -67,7 +67,10 @@ const CartMenu: React.FunctionComponent<Props> = ({ visible, onClose }): JSX.Ele
                   return <CartItem key={cartItems[index].pack.uuid} cartItem={cartItems[index]} />;
                 })}
               </div>
-              <div>total: {getTotal()}</div>
+              <div>
+                <b>TOTAL: </b>
+                {getTotal()}
+              </div>
             </animated.div>
           ),
       )}

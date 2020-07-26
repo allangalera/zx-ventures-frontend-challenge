@@ -12,6 +12,7 @@ const spacing = {
 };
 
 const fontSize = {
+  '2xs': spacing.unityToRem(5),
   xs: spacing.unityToRem(6),
   sm: spacing.unityToRem(7),
   base: spacing.unityToRem(8),
@@ -214,9 +215,9 @@ export default {
     colors: {
       ...defaultColors,
       defaultBackground: defaultColors.white,
-      constrastBackground: defaultColors.black,
+      contrastBackground: defaultColors.black,
       defaultText: defaultColors.gray[900],
-      constrastText: defaultColors.white,
+      contrastText: defaultColors.white,
       headerBackground: defaultColors.white,
       footerBackground: defaultColors.white,
       overlay: `${defaultColors.black}4D`,
@@ -239,9 +240,9 @@ export default {
     colors: {
       ...defaultColors,
       defaultBackground: defaultColors.black,
-      constrastBackground: defaultColors.white,
+      contrastBackground: defaultColors.white,
       defaultText: defaultColors.white,
-      constrastText: defaultColors.white,
+      contrastText: defaultColors.black,
       headerBackground: defaultColors.black,
       footerBackground: defaultColors.black,
       overlay: `${defaultColors.black}4D`,

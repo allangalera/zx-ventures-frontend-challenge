@@ -4,9 +4,15 @@ export const GlobalStyle = (theme: any): Interpolation => ({
   ['html, body']: {
     fontSize: `${theme.baseFontSize}px`,
     fontFamily: theme.font.family.sans,
+    color: theme.colors.defaultText,
+    background: theme.colors.defaultBackground,
   },
   ['b, strong, h1, h2, h3, h4, h5, h6']: {
     fontWeight: theme.font.weight.bold,
+  },
+  ['a']: {
+    textDecoration: 'none',
+    color: theme.colors.defaultText,
   },
 });
 

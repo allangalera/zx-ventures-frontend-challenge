@@ -1,5 +1,3 @@
-export const cartAddItem = 'CART_ADD_ITEM';
-
 export type Status = 'ACTIVE' | 'INACTIVE';
 export type Stock = 'IN_STOCK' | 'INACTIVE';
 

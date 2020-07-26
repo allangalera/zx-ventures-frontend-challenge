@@ -1,10 +1,9 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'emotion-theming';
-import theme from '@styles/theme';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import configStore from '@store/setup';
+import LightAndDarkThemeProvider from '@components/LightAndDarkThemeProvider';
 
 const { store, persistor } = configStore();
 
@@ -12,9 +11,9 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider theme={theme.light}>
+        <LightAndDarkThemeProvider>
           <Component {...pageProps} />
-        </ThemeProvider>
+        </LightAndDarkThemeProvider>
       </PersistGate>
     </Provider>
   );

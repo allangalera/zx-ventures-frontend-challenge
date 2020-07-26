@@ -5,13 +5,17 @@ export const CartMenu = (theme: any): Interpolation => ({
   position: 'fixed',
   top: 0,
   right: 0,
-  height: '100vh',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  background: theme.colors.white,
+  background: theme.colors.defaultBackground,
+  color: theme.colors.defaultText,
   padding: `${theme.spacing.unityToRem(6)} ${theme.spacing.unityToRem(8)}`,
-  maxWidth: theme.spacing.unityToRem(200),
+  maxWidth: theme.spacing.unityToRem(250),
   minWidth: theme.spacing.unityToRem(160),
+  ['> * + *']: {
+    marginTop: theme.spacing.unityToRem(8),
+  },
 });
 
 export const CartMenuOverlay = (theme: any): Interpolation => ({
@@ -29,7 +33,7 @@ export const CartMenuContainer = (theme: any): Interpolation => ({
   flexDirection: 'column',
   flex: 1,
   overflowY: 'auto',
-  ['> *']: {
+  ['> * + *']: {
     marginTop: theme.spacing.unityToRem(8),
   },
 });
@@ -37,4 +41,13 @@ export const CartMenuContainer = (theme: any): Interpolation => ({
 export const TitleContainer = (theme: any): Interpolation => ({
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'center',
+});
+
+export const IconSize = (theme: any): Interpolation => ({
+  fontSize: theme.font.size['2xl'],
+});
+
+export const Title = (theme: any): Interpolation => ({
+  fontSize: theme.font.size['2xl'],
 });

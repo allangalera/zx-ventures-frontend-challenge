@@ -111,11 +111,11 @@ const ProductCard: React.FunctionComponent<Props> = ({ product }): JSX.Element =
         {isPackAddedToCart ? (
           <>
             <Button handleClick={handleRemoveFromCart}>
-              <AiOutlineMinus />
+              <AiOutlineMinus css={styles.ButtonIcon} />
             </Button>
             <span>{cartItems[selectedPack.uuid]?.quantity}</span>
             <Button handleClick={handleAddToCart}>
-              <AiOutlinePlus />
+              <AiOutlinePlus css={styles.ButtonIcon} />
             </Button>
           </>
         ) : (
