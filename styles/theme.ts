@@ -174,7 +174,7 @@ const border = {
 };
 
 const defaults = {
-  c: BASE_FONT_SIZE,
+  baseFontSize: BASE_FONT_SIZE,
   header: {
     height: {
       mobile: spacing.unityToRem(32),
@@ -214,8 +214,12 @@ export default {
     colors: {
       ...defaultColors,
       defaultBackground: defaultColors.white,
+      constrastBackground: defaultColors.black,
+      defaultText: defaultColors.gray[900],
+      constrastText: defaultColors.white,
       headerBackground: defaultColors.white,
       footerBackground: defaultColors.white,
+      overlay: `${defaultColors.black}4D`,
     },
     boxShadow,
     border: {
@@ -235,8 +239,12 @@ export default {
     colors: {
       ...defaultColors,
       defaultBackground: defaultColors.black,
+      constrastBackground: defaultColors.white,
+      defaultText: defaultColors.white,
+      constrastText: defaultColors.white,
       headerBackground: defaultColors.black,
       footerBackground: defaultColors.black,
+      overlay: `${defaultColors.black}4D`,
     },
     boxShadow,
     border: {

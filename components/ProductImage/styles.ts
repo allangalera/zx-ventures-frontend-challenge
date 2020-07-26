@@ -15,8 +15,17 @@ export const ProductImageNotFound = (theme: any): Interpolation => ({
   color: theme.colors.gray[300],
   fontSize: theme.font.size['6xl'],
   userSelect: 'none',
+  textAlign: 'center',
   ['span']: {
     fontSize: theme.font.size.sm,
+    marginTop: theme.spacing.unityToRem(8),
+  },
+});
+
+export const ProductImageNotFoundSmall = (theme: any): Interpolation => ({
+  fontSize: theme.font.size['3xl'],
+  ['span']: {
+    fontSize: theme.font.size.xs,
     marginTop: theme.spacing.unityToRem(8),
   },
 });

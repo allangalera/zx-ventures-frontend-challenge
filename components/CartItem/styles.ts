@@ -1,37 +1,41 @@
 import { Interpolation } from '@emotion/core';
 
-export const ProductCard = (theme: any): Interpolation => ({
+export const CartItem = (theme: any): Interpolation => ({
   position: 'relative',
   display: 'flex',
-  flexDirection: 'column',
-  padding: `${theme.spacing.unityToRem(8)} ${theme.spacing.unityToRem(16)}`,
+  padding: `${theme.spacing.unityToRem(4)} ${theme.spacing.unityToRem(8)}`,
   borderWidth: theme.border.width,
   borderStyle: theme.border.style,
   borderColor: theme.border.color.default,
   borderRadius: theme.border.radius,
   transition: theme.transition.default,
+  alignItems: 'center',
   ['&:hover']: {
     borderColor: theme.border.color.hover,
   },
   ['> * + *']: {
-    marginTop: theme.spacing.unityToRem(8),
+    marginLeft: theme.spacing.unityToRem(8),
+  },
+  [`@media (min-width: ${theme.screens.lg})`]: {
+    padding: `${theme.spacing.unityToRem(8)} ${theme.spacing.unityToRem(16)}`,
   },
 });
 
-export const ProductCardImageContainer = (theme: any): Interpolation => ({
+export const CartItemImageContainer = (theme: any): Interpolation => ({
   display: 'flex',
   justifyContent: 'center',
-  height: theme.spacing.unityToRem(90),
+  height: theme.spacing.unityToRem(40),
+  flexBasis: theme.spacing.unityToRem(40),
   textDecoration: 'none',
 });
 
-export const ProductCardImage = (theme: any): Interpolation => ({
+export const CartItemImage = (theme: any): Interpolation => ({
   maxWidth: '100%',
   height: 'auto',
   objectFit: 'contain',
 });
 
-export const ProductCardDiscountBadge = (theme: any): Interpolation => ({
+export const CartItemDiscountBadge = (theme: any): Interpolation => ({
   position: 'absolute',
   borderRadius: '50%',
   display: 'flex',
@@ -46,28 +50,15 @@ export const ProductCardDiscountBadge = (theme: any): Interpolation => ({
   pointerEvents: 'none',
 });
 
-export const PackSelectorContainer = (theme: any): Interpolation => ({
+export const CartItemButtonsContainer = (theme: any): Interpolation => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   ['> * + *']: {
-    marginLeft: theme.spacing.unityToRem(8),
+    marginLeft: theme.spacing.unityToRem(4),
   },
 });
 
-export const FlexBetweenContainer = (theme: any): Interpolation => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  ['> * + *']: {
-    marginLeft: theme.spacing.unityToRem(8),
-  },
-});
-
-export const PackInfo = (theme: any): Interpolation => ({
-  fontSize: theme.font.size.sm,
-});
-
-export const ProductInfoContainer = (theme: any): Interpolation => ({
+export const CartItemName = (theme: any): Interpolation => ({
   flex: 1,
 });

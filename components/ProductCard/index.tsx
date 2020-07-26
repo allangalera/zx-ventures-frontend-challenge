@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 import * as styles from './styles';
 
 import { RootState } from '@store/combineReducers';
 import { addProduct, removeProduct } from '@store/cart/actions';
 import { Product } from '@store/cart/types';
 import ProductImage from '@components/ProductImage';
+import Button from '@components/Button';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 type Props = {
   product: Product;
@@ -15,7 +18,7 @@ const ProductCard: React.FunctionComponent<Props> = ({ product }): JSX.Element =
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const dispatch = useDispatch();
-  const [selectedPack, setSelectedPack] = useState(product.packs[0]);
+  const [selectedPack, setSelectedPack] = useState(product.packs[1]);
   const [isPackAddedToCart, setIsPackAddedToCart] = useState(false);
 
   useEffect(() => {
@@ -49,36 +52,76 @@ const ProductCard: React.FunctionComponent<Props> = ({ product }): JSX.Element =
 
   return (
     <div css={styles.ProductCard}>
-      <div css={styles.ProductCardImageContainer}>
-        <ProductImage src={product.image} alt={product.name} />
+      <Link href="produto/[slug]" as={`/produto/${product.slug}`} passHref>
+        <a css={styles.ProductCardImageContainer}>
+          <ProductImage src={product.image} alt={product.name} />
+        </a>
+      </Link>
+      {calculateDiscount() >= 16 && (
+        <div css={styles.ProductCardDiscountBadge}>
+          <span>
+            {calculateDiscount().toLocaleString('pt-BR', {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 1,
+            })}
+            %
+          </span>
+        </div>
+      )}
+      <div css={styles.ProductInfoContainer}>
+        <b>{product.vendors[0].vendor.name}</b>
+        <p>{product.name}</p>
       </div>
-      <div css={styles.ProductCardDiscountBadge}>
-        <span>{calculateDiscount().toFixed(1)}%</span>
-      </div>
-      <h1>{product.vendors[0].vendor.name}</h1>
-      <h1>{product.name}</h1>
-      <div>
-        {product.packs.map((item, index) => {
+      <div css={styles.PackSelectorContainer}>
+        {product.packs.map(item => {
           return (
-            <button key={item.uuid} onClick={() => setSelectedPack(item)}>
+            <Button key={item.uuid} active={selectedPack.uuid === item.uuid} handleClick={() => setSelectedPack(item)}>
               {item.unities}
-            </button>
+            </Button>
           );
         })}
       </div>
-      <div>
-        <div>{selectedPack.current_price}</div>
-        <div>{selectedPack.original_price}</div>
+      <div css={styles.FlexBetweenContainer}>
+        <div css={styles.PackInfo}>
+          <b>DESC: </b>
+          {calculateDiscount().toLocaleString('pt-BR', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 1,
+          })}
+          %
+        </div>
+        <div css={styles.PackInfo}>
+          <b>DE: </b>
+          {selectedPack.original_price.toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </div>
+        <div css={styles.PackInfo}>
+          <b>POR: </b>
+          {selectedPack.current_price.toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </div>
       </div>
-      <div>
+      <div css={styles.FlexBetweenContainer}>
         {isPackAddedToCart ? (
           <>
-            <button onClick={handleRemoveFromCart}>-</button>
-            {cartItems[selectedPack.uuid]?.quantity}
-            <button onClick={handleAddToCart}>+</button>
+            <Button handleClick={handleRemoveFromCart}>
+              <AiOutlineMinus />
+            </Button>
+            <span>{cartItems[selectedPack.uuid]?.quantity}</span>
+            <Button handleClick={handleAddToCart}>
+              <AiOutlinePlus />
+            </Button>
           </>
         ) : (
-          <button onClick={handleAddToCart}>ADDICIONAR AO CARRINHO</button>
+          <Button fill handleClick={handleAddToCart}>
+            ADDICIONAR AO CARRINHO
+          </Button>
         )}
       </div>
     </div>

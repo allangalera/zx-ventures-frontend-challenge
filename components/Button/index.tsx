@@ -1,19 +1,33 @@
 import React from 'react';
 import * as styles from './styles';
+import { Interpolation } from '@emotion/core';
+import merge from 'lodash/merge';
 
 type Props = {
-  text: string;
-  handleClick: Function;
+  active?: boolean;
+  fill?: boolean;
+  handleClick: (ev: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const Button: React.FunctionComponent<Props> = ({ text, handleClick }): JSX.Element => {
-  const onClick = () => {
-    console.log('aqui');
-    handleClick();
-  };
+const Button: React.FunctionComponent<Props> = ({
+  active = false,
+  fill = false,
+  handleClick,
+  children,
+}): JSX.Element => {
   return (
-    <button css={styles.Button} onClick={onClick}>
-      <span css={styles.ButtonSpan}>{text}</span>
+    <button
+      css={(theme: any): Interpolation => {
+        let style = styles.Button(theme);
+
+        if (active) merge(style, styles.ButtonActive(theme));
+        if (fill) merge(style, styles.ButtonFill(theme));
+
+        return style;
+      }}
+      onClick={handleClick}
+    >
+      {children}
     </button>
   );
 };
