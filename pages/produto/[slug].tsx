@@ -19,7 +19,6 @@ const ProductPage: FunctionComponent<Props> = ({ product }): JSX.Element => {
     title: 'Allan Galera - ZX Ventures Challenge',
     description: 'Allan Galera Challange to apply to ZX Ventures job :)',
   };
-  console.log(product);
   return (
     <LDefault>
       <MetaSeo {...seo} />
