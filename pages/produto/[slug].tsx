@@ -25,7 +25,7 @@ const ProductPage: FunctionComponent<Props> = ({ product }): JSX.Element => {
       <MetaSeo {...seo} />
       <Container>
         <Spacer />
-        página do produto :D
+        Under Construction :(
         <h1>{product.name}</h1>
         <Spacer />
       </Container>

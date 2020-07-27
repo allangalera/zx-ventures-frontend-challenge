@@ -72,11 +72,12 @@ const ProductCard: React.FunctionComponent<Props> = ({ product }): JSX.Element =
         <b>{product.vendors[0].vendor.name}</b>
         <p>{product.name}</p>
       </div>
+      <p>Escolha seu pack:</p>
       <div css={styles.PackSelectorContainer}>
         {product.packs.map(item => {
           return (
             <Button key={item.uuid} active={selectedPack.uuid === item.uuid} handleClick={() => setSelectedPack(item)}>
-              {item.unities}
+              {item.unities} UNID.
             </Button>
           );
         })}

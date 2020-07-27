@@ -239,7 +239,7 @@ export default {
     transition,
     colors: {
       ...defaultColors,
-      defaultBackground: defaultColors.black,
+      defaultBackground: defaultColors.gray[900],
       contrastBackground: defaultColors.white,
       defaultText: defaultColors.white,
       contrastText: defaultColors.black,

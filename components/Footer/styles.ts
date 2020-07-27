@@ -13,6 +13,7 @@ export const Footer = (theme: any): Interpolation => ({
   borderTopWidth: theme.border.width,
   borderTopStyle: theme.border.style,
   borderTopColor: theme.border.color.default,
+  fontSize: theme.font.size.sm,
   textAlign: 'center',
   [`@media (min-width: ${theme.screens.lg})`]: {
     height: theme.footer.height.desktop,

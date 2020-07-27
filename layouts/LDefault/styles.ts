@@ -20,10 +20,13 @@ export const LDefault = (theme: any): Interpolation => ({
   minHeight: '100vh',
   background: theme.colors.defaultBackground,
   display: 'grid',
-  gridTemplateRows: 'max-content auto max-content',
+  gridTemplateRows: '1fr',
 });
 
 export const LDefaultMain = (theme: any): Interpolation => ({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100%',
   paddingTop: theme.header.height.mobile,
   paddingBottom: theme.footer.height.mobile,
 

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import useSWR from 'swr';
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
@@ -9,10 +9,13 @@ import MetaSeo from '@components/MetaSeo';
 import Container from '@components/Container';
 import Spacer from '@components/Spacer';
 import ProductGallery from '@components/ProductGallery';
+import SearchBox from '@components/SearchBox';
+import Loading from '@components/Loading';
 
 const Home: FunctionComponent<any> = (): JSX.Element => {
+  // const [data, setData] = useState(false);
   const { data, error } = useSWR('/api/products', fetcher);
-  console.log(data);
+  // console.log(data);
   // if (error) return <div>Failed to load</div>
   // if (!data) return <div>Loading...</div>
   const seo = {
@@ -23,11 +26,17 @@ const Home: FunctionComponent<any> = (): JSX.Element => {
   return (
     <LDefault>
       <MetaSeo {...seo} />
-      <Container>
-        <Spacer />
-        {data && <ProductGallery products={data.items} />}
-        <Spacer />
-      </Container>
+      {data ? (
+        <Container>
+          <Spacer />
+          {/* <SearchBox />
+          <Spacer /> */}
+          <ProductGallery products={data.items} />
+          <Spacer />
+        </Container>
+      ) : (
+        <Loading />
+      )}
     </LDefault>
   );
 };
